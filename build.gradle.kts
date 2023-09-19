@@ -72,14 +72,15 @@ subprojects {
             mavenBom("org.springframework.cloud:spring-cloud-dependencies:$springCloudVersion")
             mavenBom("com.wavesenterprise:we-sdk-bom:$weSdkBomVersion") {
                 bomProperty("kotlin.version", kotlinVersion)
-                bomProperty("we-tx-observer.version", "0.0.16-3b272c62-feature_wtch_164-SNAPSHOT")
+                bomProperty("we-tx-observer.version", "1.0.0")
+                bomProperty("we-node-client.version", "1.0.0")
+                bomProperty("we-contract-sdk.version", "1.3.0")
+                bomProperty("we-sdk-spring.version", "1.0.0")
             }
             mavenBom("com.fasterxml.jackson:jackson-bom:$jacksonKotlinVersion")
         }
 
         dependencies {
-//            dependency("org.flywaydb:flyway-core:$flywayVersion")
-
             dependency("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:$jacksonDatabindVersion")
             dependency("com.fasterxml.jackson.module:jackson-module-kotlin:$jacksonKotlinVersion")
             dependency("net.java.dev.jna:jna:$jnaVersion")
