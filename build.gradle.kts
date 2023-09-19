@@ -86,7 +86,6 @@ subprojects {
             dependency("net.java.dev.jna:jna:$jnaVersion")
 
             dependency("org.postgresql:postgresql:$postgresVersion")
-            dependency("io.github.openfeign:feign-core:$feignCoreVersion")
             dependency("com.wavesenterprise:we-flyway-starter:$weFlywayStarterVersion")
         }
     }
