@@ -67,9 +67,6 @@ subprojects {
             mavenBom("org.springframework.boot:spring-boot-dependencies:$springBootVersion") {
                 bomProperty("kotlin.version", kotlinVersion)
             }
-            mavenBom("org.springframework.boot:spring-boot-dependencies:$springBootVersion")
-            mavenBom("org.springframework.cloud:spring-cloud-security-dependencies:$springCloudSecurityVersion")
-            mavenBom("org.springframework.cloud:spring-cloud-dependencies:$springCloudVersion")
             mavenBom("com.wavesenterprise:we-sdk-bom:$weSdkBomVersion") {
                 bomProperty("kotlin.version", kotlinVersion)
                 bomProperty("we-tx-observer.version", "1.0.0")
@@ -86,7 +83,7 @@ subprojects {
             dependency("net.java.dev.jna:jna:$jnaVersion")
 
             dependency("org.postgresql:postgresql:$postgresVersion")
-            dependency("com.wavesenterprise:we-flyway-starter:$weFlywayStarterVersion")
+            dependency("com.wavesenterprise:we-flyway-starter:$weFlywayStarterVersion") // todo moved to we-tx-observer-sdk?
         }
     }
 
