@@ -5,7 +5,7 @@ import com.wavesenterprise.contract.app.*;
 import com.wavesenterprise.sdk.contract.core.dispatch.*;
 import com.wavesenterprise.sdk.contract.grpc.*;
 
-public class FabCarContractStarter {
+public class FabCarContractDispatcher {
     public static void main(String[] args) {
         ContractDispatcher contractDispatcher = GrpcJacksonContractDispatcherBuilder.builder()
                 .contractHandlerType(FabCarContractImpl.class)

@@ -16,8 +16,8 @@ dependencies {
 
 tasks.withType<ShadowJar> {
     manifest {
-        attributes["Main-Class"] = "com.wavesenterprise.contract.FabCarContractStarter"
+        attributes["Main-Class"] = "com.wavesenterprise.contract.FabCarContractDispatcher"
     }
 }
 
-project.setProperty("mainClassName", "com.wavesenterprise.contract.FabCarContractStarter")
+project.setProperty("mainClassName", "com.wavesenterprise.contract.FabCarContractDispatcher")
