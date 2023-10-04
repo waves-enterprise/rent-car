@@ -17,4 +17,5 @@ dependencies {
     implementation("org.postgresql:postgresql")
     implementation("io.github.openfeign:feign-core")
     implementation("commons-codec:commons-codec:1.15")
+    implementation("org.springdoc:springdoc-openapi-ui")
 }
