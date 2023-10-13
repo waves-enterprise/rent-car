@@ -13,6 +13,7 @@ val jacksonKotlinVersion: String by project
 val jacksonDatabindVersion: String by project
 val postgresVersion: String by project
 val feignCoreVersion: String by project
+val springdocVersion: String by project
 
 val weSdkBomVersion: String by project
 
@@ -67,15 +68,12 @@ subprojects {
             mavenBom("org.springframework.boot:spring-boot-dependencies:$springBootVersion") {
                 bomProperty("kotlin.version", kotlinVersion)
             }
-            mavenBom("org.springframework.boot:spring-boot-dependencies:$springBootVersion")
-            mavenBom("org.springframework.cloud:spring-cloud-security-dependencies:$springCloudSecurityVersion")
-            mavenBom("org.springframework.cloud:spring-cloud-dependencies:$springCloudVersion")
             mavenBom("com.wavesenterprise:we-sdk-bom:$weSdkBomVersion") {
                 bomProperty("kotlin.version", kotlinVersion)
-                bomProperty("we-tx-observer.version", "1.0.0")
+                bomProperty("we-tx-observer.version", "1.0.4-6f6948a7-feature_add_we_flyway_starter_to_bom-SNAPSHOT")
                 bomProperty("we-node-client.version", "1.0.0")
                 bomProperty("we-contract-sdk.version", "1.3.0")
-                bomProperty("we-sdk-spring.version", "1.0.0")
+                bomProperty("we-sdk-spring.version", "1.0.1")
             }
             mavenBom("com.fasterxml.jackson:jackson-bom:$jacksonKotlinVersion")
         }
@@ -86,8 +84,7 @@ subprojects {
             dependency("net.java.dev.jna:jna:$jnaVersion")
 
             dependency("org.postgresql:postgresql:$postgresVersion")
-            dependency("io.github.openfeign:feign-core:$feignCoreVersion")
-            dependency("com.wavesenterprise:we-flyway-starter:$weFlywayStarterVersion")
+            dependency("org.springdoc:springdoc-openapi-ui:$springdocVersion")
         }
     }
 

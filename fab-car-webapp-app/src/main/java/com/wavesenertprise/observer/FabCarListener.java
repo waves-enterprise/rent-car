@@ -5,13 +5,9 @@ import com.wavesenertprise.repository.*;
 import com.wavesenterprise.contract.domain.*;
 import com.wavesenterprise.we.tx.observer.api.key.*;
 import com.wavesenterprise.we.tx.observer.api.tx.*;
-import java.util.*;
-import javax.annotation.*;
-import org.jetbrains.annotations.*;
 import org.slf4j.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
-import static com.wavesenterprise.contract.api.FabCarContract.Keys.CARS_MAPPING_PREFIX;
 
 @Service
 public class FabCarListener {

@@ -3,6 +3,8 @@ package com.wavesenertprise.controller;
 import com.wavesenertprise.entity.*;
 import com.wavesenertprise.service.*;
 import com.wavesenterprise.contract.domain.*;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.enums.ParameterIn;
 import java.util.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.web.bind.annotation.*;
@@ -18,11 +20,21 @@ public class FabCarController {
     }
 
     @PostMapping("/init")
+    @Parameter(in = ParameterIn.HEADER,
+            name = "X-Tx-Sender",
+            required = true,
+            example = "3M3xGmJGmxBv2aZ4UFmn93rHxVXTJDKSAnh"
+    )
     public String init() {
         return fabCarService.initFab();
     }
 
     @PostMapping("/car/{carNumber}/query/{contractId}")
+    @Parameter(in = ParameterIn.HEADER,
+            name = "X-Tx-Sender",
+            required = true,
+            example = "3M3xGmJGmxBv2aZ4UFmn93rHxVXTJDKSAnh"
+    )
     public String queryCar(
             @PathVariable String contractId,
             @PathVariable String carNumber
@@ -31,6 +43,11 @@ public class FabCarController {
     }
 
     @PostMapping("/car/{contractId}/create")
+    @Parameter(in = ParameterIn.HEADER,
+            name = "X-Tx-Sender",
+            required = true,
+            example = "3M3xGmJGmxBv2aZ4UFmn93rHxVXTJDKSAnh"
+    )
     public String createCar(
             @PathVariable String contractId,
             @RequestBody Car car
@@ -39,6 +56,11 @@ public class FabCarController {
     }
 
     @PostMapping("/car/{contractId}/{carNumber}/new-owner/{carOwner}")
+    @Parameter(in = ParameterIn.HEADER,
+            name = "X-Tx-Sender",
+            required = true,
+            example = "3M3xGmJGmxBv2aZ4UFmn93rHxVXTJDKSAnh"
+    )
     public String changeCarOwner(
             @PathVariable String contractId,
             @PathVariable String carNumber,
