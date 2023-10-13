@@ -21,9 +21,9 @@ node:
         url: http://158.160.97.253:6862
         loggerLevel: FULL
         read-timeout: 30000
-#      grpc:
-#        address: fns-node-0
-#        port: 6865
+      grpc:
+        address: node-0
+        port: 6865
   credentials-provider:
     addresses:
       3QPTyemLrun9iwE54XHZ1r7P3h1RCkFh5ty: wrFF1JmpAk1Ft8ug

@@ -1,7 +1,6 @@
 
 import io.spring.gradle.dependencymanagement.dsl.DependencyManagementExtension
 
-val weFlywayStarterVersion: String by project
 val kotlinVersion: String by project
 val springBootVersion: String by project
 val springCloudVersion: String by project
@@ -70,10 +69,6 @@ subprojects {
             }
             mavenBom("com.wavesenterprise:we-sdk-bom:$weSdkBomVersion") {
                 bomProperty("kotlin.version", kotlinVersion)
-                bomProperty("we-tx-observer.version", "1.0.4-6f6948a7-feature_add_we_flyway_starter_to_bom-SNAPSHOT")
-                bomProperty("we-node-client.version", "1.0.0")
-                bomProperty("we-contract-sdk.version", "1.3.0")
-                bomProperty("we-sdk-spring.version", "1.0.1")
             }
             mavenBom("com.fasterxml.jackson:jackson-bom:$jacksonKotlinVersion")
         }
