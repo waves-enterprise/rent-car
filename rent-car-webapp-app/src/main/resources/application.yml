@@ -1,0 +1,80 @@
+contracts:
+  config:
+    rentCarContract:
+      image: registry.hub.docker.com/donyfutura/contract:0.0.1
+      imageHash: e95dfce7fb4ca9ef7f5e6a829467a4c65284689d9dcfe00daed1f96d3a2999e4
+      version: 3
+      fee: 0
+      auto-update:
+        enabled: false
+        contractCreatorAddress: null
+
+
+node:
+  config:
+    node-0:
+      http:
+        url: http://158.160.97.253:6862
+        loggerLevel: FULL
+        read-timeout: 30000
+      grpc:
+        address: node-0
+        port: 6865
+
+rent-car:
+  db-schema: rent_car
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        default_schema: ${rent-car.db-schema}
+        event:
+          merge:
+            entity_copy_observer: allow
+        jdbc:
+          time_zone: UTC
+          log.warnings: true
+          lob.non_contextual_creation: true
+    show-sql: false
+  application:
+    name: rent-car-app
+  datasource:
+    hikari:
+      schema: ${rent-car.db-schema}
+      minimum-idle: 2
+      maximum-pool-size: 10
+      idle-timeout: 30000
+      pool-name: rent-car-app-jpa-pool
+      max-lifetime: 100000
+      connection-timeout: 30000
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:postgresql://localhost:5432/rent_car
+    username: postgres
+    password: docker
+  flyway:
+    enabled: true
+    schemas: ${rent-car.db-schema}
+    default-schema: ${rent-car.db-schema}
+
+tx-observer:
+  activation-height: 48
+  queue-cleaner:
+    enabled: true
+
+logging:
+  level:
+    com:
+      wavesenterprise:
+        sdk:
+          node:
+            client:
+              blocking:
+                tx:
+                  TxService:
+                    DEBUG
+
+server:
+  port : 8081
