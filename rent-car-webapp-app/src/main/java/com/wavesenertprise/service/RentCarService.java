@@ -33,7 +33,7 @@ public class RentCarService {
         return executionContext.getTx().getId().asBase58String();
     }
 
-    public String queryCar(String carNumber, String contractId) {
+    public String rentCar(String carNumber, String contractId) {
         ExecutionContext executionContext = contractClient.executeContract(
                 ContractId.fromBase58(contractId), (RentCarContract rentCarContract) -> {
                     rentCarContract.rentCar(carNumber);

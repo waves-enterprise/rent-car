@@ -13,10 +13,6 @@ contracts:
 node:
   config:
     node-0:
-      url: 'DO_NOT_USE'
-    node-1:
-      url: 'DO_NOT_USE'
-    fns-node-0:
       http:
         url: http://158.160.97.253:6862
         loggerLevel: FULL

@@ -29,17 +29,17 @@ public class RentCarController {
         return rentCarService.initRent();
     }
 
-    @PostMapping("/car/{carNumber}/query/{contractId}")
+    @PostMapping("/car/{carNumber}/rent/{contractId}")
     @Parameter(in = ParameterIn.HEADER,
             name = "X-Tx-Sender",
             required = true,
             example = "3M3xGmJGmxBv2aZ4UFmn93rHxVXTJDKSAnh"
     )
-    public String queryCar(
+    public String rentCar(
             @PathVariable String contractId,
             @PathVariable String carNumber
     ) {
-        return rentCarService.queryCar(carNumber, contractId);
+        return rentCarService.rentCar(carNumber, contractId);
     }
 
     @PostMapping("/car/{contractId}/create")
