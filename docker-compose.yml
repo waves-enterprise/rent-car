@@ -3,7 +3,7 @@ services:
   postgres:
     image: postgres:13.3
     environment:
-      POSTGRES_DB: "fab_car"
+      POSTGRES_DB: "rent_car"
       POSTGRES_USER: "postgres"
       POSTGRES_PASSWORD: "docker"
     ports:
