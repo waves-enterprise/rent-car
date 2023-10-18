@@ -45,9 +45,9 @@ pluginManagement {
     }
 }
 
-rootProject.name = "fab-car-app"
+rootProject.name = "rent-car"
 include(
-    "fab-car-contract-app",
-    "fab-car-webapp-app"
+    "rent-car-contract-app",
+    "rent-car-webapp-app"
 )
 
